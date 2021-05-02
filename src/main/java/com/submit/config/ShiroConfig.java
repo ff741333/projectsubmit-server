@@ -43,16 +43,17 @@ public class ShiroConfig {
 		filterMap.put("/css/**", "anon");
 		filterMap.put("/js/**", "anon");
 		filterMap.put("/layui/**", "anon");
-		filterMap.put("/login.html","anon");
+		filterMap.put("/login.html","roles[admin]");
 		filterMap.put("/loginteacher.html","anon");
-		filterMap.put("/studentlogin","anon");
+		filterMap.put("/studentlogin","roles[admin]");
 		filterMap.put("/teacherlogin","anon");
 		//测试环境
 		filterMap.put("/android/**","anon");
+		filterMap.put("/teacher/**","anon");
 		//授权过滤器
 		//注意：当前授权拦截后，shiro会自动跳转到未授权页面
-		//filterMap.put("/teacher/**","roles[teacher]");
-		filterMap.put("/student/**","roles[student]");
+		//ilterMap.put("/teacher/**","roles[teacher]");
+		filterMap.put("/student/**","roles[admin]");
 		filterMap.put("/**", "authc");//authc即为认证登陆后即可访问
 		
 		//修改调整的登录页面

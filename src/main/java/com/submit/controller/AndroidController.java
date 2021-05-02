@@ -21,10 +21,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -152,5 +149,32 @@ public class AndroidController {
             throw new ApiException("查询不到问题！",COMMON_BUSINESS_ERROR);
         return new ApiResult<Map<String,Object>>().setData(map);
     }
+
+    //提交作业
+    @LoginRequired
+    @ResponseBody
+    @PostMapping("changejobstatus")
+    public ApiResult changejobstatus(@CurrentUser User user, Integer idjob) throws Exception {
+        if(idjob == null)
+            throw new ApiException("参数错误！",COMMON_BUSINESS_ERROR);
+        Boolean result = studentService.insertintojobstatus(user.getLoginName(), idjob);
+        if(result==null || !result)
+            throw new ApiException("提交失败！",COMMON_BUSINESS_ERROR);
+        return new ApiResult<Boolean>().setData(result);
+    }
+
+    //提交或更新答案
+    @LoginRequired
+    @ResponseBody
+    @PostMapping("answersubmit")
+    public ApiResult answersubmit(@CurrentUser User user, Integer idquestion,String youranswer) throws Exception {
+        if(idquestion == null || youranswer ==null)
+            throw new ApiException("参数错误！",COMMON_BUSINESS_ERROR);
+        Boolean result = questionService.insertorupdateanswer(user.getLoginName(), idquestion, youranswer);
+        if(result==null || !result)
+            throw new ApiException("提交失败！",COMMON_BUSINESS_ERROR);
+        return new ApiResult<Boolean>().setData(result);
+    }
+
 
 }

@@ -21,13 +21,13 @@ public class thymleafController {
     @Autowired(required = false)
     com.submit.service.teacherService teacherService;
 
-    @GetMapping("student")
+    @GetMapping(value = "/student")
     public String index(Model model, HttpServletRequest request)
     {
      model.addAttribute("studentid",request.getSession().getAttribute("studentid"));
      return "student/student";
     }
-    @GetMapping("changepass")
+    @GetMapping(value = "/changepass")
     public String changepassword(Model model,HttpServletRequest request){
         student student=studentMapper.selectByPrimaryKey((String) request.getSession().getAttribute("studentid"));
         model.addAttribute("msg","");
@@ -35,17 +35,17 @@ public class thymleafController {
         return "student/changepass";
     }
 
-    @GetMapping("upload")
+    @GetMapping(value = "/upload")
     public String upload(Model model,HttpServletRequest request){
         List<teachclass>list=studentService.getList((String) request.getSession().getAttribute("studentid"));
         model.addAttribute("list",list);
         return "student/upload";
     }
 
-    @GetMapping("uploadjilu")
+    @GetMapping(value = "/uploadjilu")
     public  String uploadjilu(){return "student/addteach";}
 
-    @GetMapping("addteach")
+    @GetMapping(value = "/addteach")
     public String addteach(Model model,HttpServletRequest request)
     {
 
@@ -55,14 +55,14 @@ public class thymleafController {
         model.addAttribute("list",list);
         return "student/addteach";
     }
-    @GetMapping("mylesson")
+    @GetMapping(value = "/mylesson")
     public String mylesson(Model model,HttpServletRequest request)
     {
         List<teachclass>list=teacherService.getteachcassbyteacherid((String)request.getSession().getAttribute("teacherid"));
 
         return null;
     }
-    @GetMapping("teacher")
+    @GetMapping(value = "/teacher")
     public String teacher(Model model,HttpServletRequest request)
     {
         teacher teacher=teacherService.getteacherbyid((String)request.getSession().getAttribute("teacherid"));
@@ -70,7 +70,7 @@ public class thymleafController {
         model.addAttribute("techername",teacher.getName());
         return "teacher/teacher";
     }
-    @GetMapping("changpassteacher")
+    @GetMapping(value = "/changpassteacher")
     public String changepassteacher(Model model,HttpServletRequest request)
     {
         teacher teacher=teacherService.getteacherbyid((String)request.getSession().getAttribute("teacherid"));
@@ -80,14 +80,14 @@ public class thymleafController {
         return "teacher/changepassteacher";
     }
 
-    @GetMapping("teacherlesson")
+    @GetMapping(value = "/teacherlesson")
     public String teacherlesson(Model model,HttpServletRequest request)
     {
        List<teachclass>list= teacherService.getteachcassbyteacheridall((String) request.getSession().getAttribute("teacherid"));
        model.addAttribute("list",list);
         return "teacher/teacherlesson";
     }
-    @GetMapping("editeachclass")
+    @GetMapping(value = "/editeachclass")
     public String editeachclass(String teachclassid,HttpServletRequest request,Model model)
     {
         teachclass teachclass=teacherService.getteachclassbyclassid(teachclassid);

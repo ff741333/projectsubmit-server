@@ -81,6 +81,10 @@ public class studentService {
     public List<Map<String, Object>> getstudentjob(String studentno, Integer teachclassid){
         return jobMapper.getstudentjob(studentno,teachclassid);
     }
+
+    public boolean insertintojobstatus(String username, Integer idjob){
+        return scoreMapper.insertintojobstatus(username,idjob);
+    }
 }
 
 

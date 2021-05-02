@@ -15,13 +15,13 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Controller
-@RequestMapping("teacher")
+@RequestMapping(value = "/teacher")
 public class teacherJobController {
     @Autowired(required = false)
     com.submit.service.teacherService teacherService;
 
     @ResponseBody
-    @GetMapping("getjobbyteachclaid")
+    @GetMapping(value = "/getjobbyteachclaid")
     public List<job> getjobbyteachclaid(String teacherclaid, HttpServletRequest request)
     {
         try {
@@ -30,7 +30,7 @@ public class teacherJobController {
         {e.printStackTrace();return null;}
     }
     @ResponseBody
-    @GetMapping("getjobbyteachclaid2")
+    @GetMapping(value = "/getjobbyteachclaid2")
     public Map<String,Object> getjobbyteachclaid2(String teacherclaid, HttpServletRequest request)//给表格用
     {
         try {
@@ -44,7 +44,7 @@ public class teacherJobController {
         {e.printStackTrace();return null;}
     }
     @ResponseBody
-    @PostMapping("addjob")
+    @PostMapping(value = "/addjob", produces = {"text/plain;charset=utf-8"})
     public String addjob(String lesson,String no,String title,String duedate,int type,String note)
     {
         try {
@@ -66,7 +66,7 @@ public class teacherJobController {
     }
 
     @ResponseBody
-    @PostMapping("updatejobbyteachclaid")
+    @PostMapping(value = "/updatejobbyteachclaid",produces = {"text/plain;charset=utf-8"})
     public String updatejobbyteachclaid(String ID,String no,String title,String duedate,String type,String note)
     {
         try {
@@ -86,7 +86,7 @@ public class teacherJobController {
     }
 
     @ResponseBody
-    @PostMapping("deletejobbyid")
+    @PostMapping(value = "/deletejobbyid",produces = {"text/plain;charset=utf-8"})
     public  String deletejobbyid(int id)
     {
         try {

@@ -18,6 +18,8 @@ public class score {
 
     private String note;
 
+    private Integer status;
+
     public Long getId() {
         return id;
     }
@@ -64,5 +66,13 @@ public class score {
 
     public void setNote(String note) {
         this.note = note == null ? null : note.trim();
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }

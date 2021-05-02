@@ -28,12 +28,12 @@ public class studentController {
     com.submit.service.studentService studentService;
 
     @ResponseBody
-    @GetMapping("tt")
+    @GetMapping(value = "/tt")
     public Object tt()
     {
         return studentService.getList("162210702234");
     }
-    @PostMapping("updatepassword")
+    @PostMapping(value = "/updatepassword")
     public String updatepassword(String username, String oldpassword, String newpassword, Model model)
     {
         try {
@@ -59,17 +59,17 @@ public class studentController {
             e.printStackTrace();
             model.addAttribute("msg","异常错误");
         }
-        return "student/changepass";
+        return "/student/changepass";
     }
     @ResponseBody
-    @GetMapping("getjobbyteachclassid")
+    @GetMapping(value = "/getjobbyteachclassid")
     public List<job>getjobbyteachclassid(String id)
     {
         return studentService.getjobbyteacherclassid(Integer.parseInt(id));
     }
 
     @ResponseBody
-    @PostMapping("addstuclaid")
+    @PostMapping(value = "/addstuclaid")
     public String addstuclaid(int stuclaid,HttpServletRequest request)
     {
         try {return null;
@@ -82,7 +82,7 @@ public class studentController {
     }
 
     @ResponseBody
-    @GetMapping("getscoreupload")
+    @GetMapping(value = "/getscoreupload")
     public Map<String, Object> getscoreupload(HttpServletRequest request)
     {
         String studentid=(String) request.getSession().getAttribute("studentid");
@@ -96,7 +96,7 @@ public class studentController {
     }
     //获取实验信息
     @ResponseBody
-    @GetMapping("gettaskdetail")
+    @GetMapping(value = "/gettaskdetail")
     public List<Map<String,Object>>gettaskdetail(HttpServletRequest request)
     {
         String studentid=(String) request.getSession().getAttribute("studentid");

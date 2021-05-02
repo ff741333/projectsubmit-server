@@ -123,7 +123,7 @@ public class teacherService {
             String date=te.getCoursesemester();
             String dayear = date.substring(0, 4);
             String xueqi = date.substring(10, 11);
-            if ((Integer.parseInt(xueqi) == 2 && month < 8 && Integer.parseInt(dayear) == year - 1) || (Integer.parseInt(xueqi) == 2 && month > 8 && Integer.parseInt(dayear) == year)) {
+            if ((Integer.parseInt(xueqi) == 2 && month < 8 && Integer.parseInt(dayear) == year - 1) || (Integer.parseInt(xueqi) == 1 && month > 8 && Integer.parseInt(dayear) == year)) {
                 list1.add(te);
                 logger.info(dayear + "  " + xueqi);
             }
@@ -225,5 +225,13 @@ public class teacherService {
 
     public void deleteteacherbyid(String teacherno) {
      teacherMapper.deleteByPrimaryKey(teacherno);
+    }
+
+    public int updatejobstatus(Integer scoreid){
+        return scoreMapper.updatejobstatus(scoreid);
+    }
+
+    public int updatealljobstatus(Integer jobid){
+        return scoreMapper.updatealljobstatus(jobid);
     }
 }

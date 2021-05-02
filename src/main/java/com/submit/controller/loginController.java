@@ -22,12 +22,12 @@ public class loginController {
     @Autowired(required = false)
     studentMapper studentMapepr;
     @ResponseBody
-    @GetMapping("test")
+    @GetMapping(value = "/test")
     public List<student> test()
     {
         return studentMapepr.getall();
     }
-    @PostMapping("studentlogin")
+    @PostMapping(value = "/studentlogin")
     public String studentlogin(String username, String password, HttpServletRequest request) {
         Subject subject = SecurityUtils.getSubject();
         subject.getSession().setAttribute("role","student");
@@ -57,7 +57,7 @@ public class loginController {
     }
 
 
-    @PostMapping("teacherlogin")
+    @PostMapping(value = "/teacherlogin")
     public String teacherlogin(String username, String password, HttpServletRequest request) {
         Subject subject = SecurityUtils.getSubject();
         subject.getSession().setAttribute("role","teacher");

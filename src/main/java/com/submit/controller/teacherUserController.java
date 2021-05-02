@@ -12,10 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 @RestController
@@ -30,7 +27,7 @@ public class teacherUserController {
     @Autowired(required = false)
     studentMapper studentMapper;
 
-    @GetMapping("getallstudent")
+    @GetMapping(value = "/getallstudent")
     public Map getallstudent(String studentid,String name)
     {
         if(studentid==null)studentid="";
@@ -42,7 +39,7 @@ public class teacherUserController {
         map.put("data",list);
         return map;
     }
-    @PostMapping("updatestudent")
+    @PostMapping(value = "/updatestudent", produces = {"text/plain;charset=utf-8"})
     public String updatestudent(String studentid,String name,String pinyin,String password)
     {
         try {
@@ -60,7 +57,7 @@ public class teacherUserController {
         }
     }
 
-    @PostMapping("deletestudent")
+    @PostMapping(value = "/deletestudent", produces = {"text/plain;charset=utf-8"})
     public String deletestudent(String studentid)
     {
         try {
@@ -71,7 +68,7 @@ public class teacherUserController {
             return "删除失败";
         }
     }
-    @GetMapping("getallteacher")
+    @GetMapping(value = "/getallteacher")
     public Map<String,Object>getallteacher()
     {
         Subject subject= SecurityUtils.getSubject();
@@ -90,7 +87,7 @@ public class teacherUserController {
        return map;
 
     }
-    @PostMapping("addteacher")
+    @PostMapping(value = "/addteacher", produces = {"text/plain;charset=utf-8"})
     public String addteacher(String teacherno,String name,String password,HttpServletRequest request)
     {
         teacher teacher1=teacherService.getteacherbyid((String)request.getSession().getAttribute("teacherid") );
@@ -107,7 +104,7 @@ public class teacherUserController {
         {e.printStackTrace();return "插入失败";}
 
     }
-    @PostMapping("deleteteacher")
+    @PostMapping(value = "/deleteteacher", produces = {"text/plain;charset=utf-8"})
     public String deleteteacher(String teacherno,HttpServletRequest request)
     {
         teacher teacher=teacherService.getteacherbyid((String)request.getSession().getAttribute("teacherid") );
@@ -124,7 +121,7 @@ public class teacherUserController {
             }
         }
     }
-    @PostMapping("updatepasswordtecher")
+    @PostMapping(value = "/updatepasswordtecher", produces = {"text/plain;charset=utf-8"})
     public String updatepasswordtecher(String oldpassword, String newpassword,  HttpServletRequest request)
     {
         teacher teacher= teacherService.getteacherbyid((String)request.getSession().getAttribute("teacherid"));
@@ -143,7 +140,7 @@ public class teacherUserController {
         }
     }
 
-    @PostMapping("updatestuclaid")//更新花名册的编号
+    @PostMapping(value = "/updatestuclaid", produces = {"text/plain;charset=utf-8"})//更新花名册的编号
     public String updatestuclaid(String stuclaid,String num)
     {
         try {
@@ -157,10 +154,12 @@ public class teacherUserController {
     }
 
 
-    @GetMapping("getscorebyjobid")
-    public Map getscorebyjobid(int jobid)
+    @GetMapping(value = "/getscorebyjobid")
+    public Map getscorebyjobid(Integer jobid)
     {
-       List<Map>list= teacherService.getscorebyjobid(jobid);
+
+       List<Map>list = new LinkedList<>();
+       if(jobid != null)list= teacherService.getscorebyjobid(jobid);
        Map<String,Object> map=new ConcurrentHashMap<>();
        map.put("code","0");
        map.put("count",list.size());
@@ -168,7 +167,7 @@ public class teacherUserController {
        return map;
     }
 
-    @PostMapping("updatescorebyscoreid")
+    @PostMapping(value = "/updatescorebyscoreid", produces = {"text/plain;charset=utf-8"})
     public String updatescorebyscoreid(String scoreid,String score,String note)
     {
         try {
@@ -180,7 +179,7 @@ public class teacherUserController {
     }
 
 
-    @GetMapping("addstudentuser")
+    @GetMapping(value = "/addstudentuser", produces = {"text/plain;charset=utf-8"})
     public String addstudentuser(String studentno,String name,String pinyin,String password)
     {
         try {
@@ -197,7 +196,7 @@ public class teacherUserController {
             return "插入失败";
         }
     }
-//    @GetMapping("lessonaddstudent")
+//    @GetMapping(value = "/lessonaddstudent", produces = {"text/plain;charset=utf-8"})
 //    public String lessonaddstudent(String teachclaid,String studentno,String no,String note)
 //    {
 //        try {
@@ -215,7 +214,7 @@ public class teacherUserController {
 //        }
 //    }
 
-    @PostMapping("deletestuclassbytwoid")
+    @PostMapping(value = "/deletestuclassbytwoid", produces = {"text/plain;charset=utf-8"})
     public String deletestuclassbytwoid(int teachclassid, String studentno)
     {
         try {
@@ -224,7 +223,7 @@ public class teacherUserController {
         }catch (Exception e)
         {e.printStackTrace();return "删除失败";}
     }
-    @PostMapping("deletestuclassbyid")
+    @PostMapping(value = "/deletestuclassbyid", produces = {"text/plain;charset=utf-8"})
     public String deletestuclassbyid(int studentclassid)
     {
         try {
@@ -245,7 +244,7 @@ public class teacherUserController {
 
 
     @ResponseBody
-    @GetMapping("getstudentattendlesson")
+    @GetMapping(value = "/getstudentattendlesson")
     public Map<String,Object>getstudentattendlesson(String classid)
     {
       List<Map>list= teacherService.getstudentbyclaid(classid);
@@ -257,7 +256,7 @@ public class teacherUserController {
     }
 
     @ResponseBody
-    @PostMapping("updatestudentclass")
+    @PostMapping(value = "updatestudentclass", produces = {"text/plain;charset=utf-8"})
     public String updatestudentclass(String studentclassid,String no,String note)
     {
         try {
@@ -278,7 +277,7 @@ public class teacherUserController {
     }
 
     @ResponseBody
-    @PostMapping("lessonaddstudent")
+    @PostMapping(value = "lessonaddstudent", produces = {"text/plain;charset=utf-8"})
     public String lessonaddstudent(String lesson,String startid,String endid,String startno,String studentid,String studentno,String type)
     {
         if(type.equals("one"))

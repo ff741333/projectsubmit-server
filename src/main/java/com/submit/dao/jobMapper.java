@@ -39,10 +39,12 @@ public interface jobMapper {
             "ORDER BY b.ID DESC")
     List<Map<String, Object>> gettaskdetail(String studentid);
 
-    @Select("SELECT ID as id,teachclassid,no,title,duedate,type,note," +
-            "DATE_FORMAT(createTime,'%Y-%m-%d %h:%m:%s') as createtime,count,idjob,studentno,status " +
-            "FROM job LEFT JOIN jobstatus ON job.ID = jobstatus.idjob and jobstatus.studentno = #{studentno} " +
+    @Select("SELECT job.ID as id,teachclassid,no,title,duedate,type,job.note," +
+            "DATE_FORMAT(createTime,'%Y-%m-%d %h:%m:%s') as createtime,count,jobID,studentno,score,DATE_FORMAT(time,'%Y-%m-%d %h:%m:%s'),status " +
+            "FROM job LEFT JOIN score ON job.ID = score.jobID and score.studentno = #{studentno} " +
             "WHERE teachclassid = #{teachclassid} ORDER BY no DESC")
     List<Map<String, Object>> getstudentjob(String studentno, Integer teachclassid);
+
+
 
 }

@@ -1,0 +1,205 @@
+2021-04-29 21:18:37.239 [restartedMain] INFO  com.submit.WorkuploadApplication - Starting WorkuploadApplication on LAPTOP-1T08KOV3 with PID 9340 (started by 10189 in F:\code\graduation design\work\workupload)
+2021-04-29 21:18:37.251 [restartedMain] INFO  com.submit.WorkuploadApplication - The following profiles are active: upload
+2021-04-29 21:18:37.354 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-29 21:18:37.354 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-29 21:18:38.751 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$645937b7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:18:38.885 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.submit.config.ShiroConfig$$EnhancerBySpringCGLIB$$f06abc4c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:18:38.925 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:18:38.937 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$972d88e7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:18:38.963 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'druidConfig' of type [com.submit.config.DruidConfig$$EnhancerBySpringCGLIB$$45111fbd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:18:39.049 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:18:39.096 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:18:39.102 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:18:39.458 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:18:39.465 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:18:39.469 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'studentMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:18:39.473 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'studentMapper' of type [com.sun.proxy.$Proxy80] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:18:39.478 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'teacherMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:18:39.479 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'teacherMapper' of type [com.sun.proxy.$Proxy82] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:18:39.483 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'adminMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:18:39.484 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'adminMapper' of type [com.sun.proxy.$Proxy83] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:18:39.486 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userRealm' of type [com.submit.config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:18:40.320 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:18:40.809 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-04-29 21:18:40.832 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-29 21:18:40.841 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-29 21:18:40.841 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2021-04-29 21:18:40.977 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-04-29 21:18:40.977 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3621 ms
+2021-04-29 21:18:41.800 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-04-29 21:18:41.840 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-04-29 21:18:41.866 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-29 21:18:41.869 [restartedMain] INFO  com.submit.WorkuploadApplication - Started WorkuploadApplication in 5.49 seconds (JVM running for 9.265)
+2021-04-29 21:21:47.320 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-29 21:21:47.320 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-04-29 21:21:47.345 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 24 ms
+2021-04-29 21:21:51.090 [http-nio-8080-exec-6] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2021-04-29 21:21:53.692 [http-nio-8080-exec-10] INFO  com.submit.controller.teacherUserController - 123456
+2021-04-29 21:21:58.015 [http-nio-8080-exec-8] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:21:58.015 [http-nio-8080-exec-8] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:21:58.015 [http-nio-8080-exec-8] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:21:58.015 [http-nio-8080-exec-8] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:22:04.871 [http-nio-8080-exec-2] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:22:04.871 [http-nio-8080-exec-2] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:22:04.871 [http-nio-8080-exec-2] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:22:04.871 [http-nio-8080-exec-2] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:22:05.880 [http-nio-8080-exec-4] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:22:05.880 [http-nio-8080-exec-4] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:22:05.880 [http-nio-8080-exec-4] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:22:05.880 [http-nio-8080-exec-4] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:22:23.214 [http-nio-8080-exec-7] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:22:23.214 [http-nio-8080-exec-7] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:22:23.214 [http-nio-8080-exec-7] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:22:23.214 [http-nio-8080-exec-7] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:22:25.870 [http-nio-8080-exec-6] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:22:25.870 [http-nio-8080-exec-6] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:22:25.870 [http-nio-8080-exec-6] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:22:25.870 [http-nio-8080-exec-6] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:22:26.348 [http-nio-8080-exec-8] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:22:26.349 [http-nio-8080-exec-8] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:22:26.349 [http-nio-8080-exec-8] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:22:26.349 [http-nio-8080-exec-8] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:23:42.016 [http-nio-8080-exec-4] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:23:42.016 [http-nio-8080-exec-4] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:23:42.016 [http-nio-8080-exec-4] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:23:42.016 [http-nio-8080-exec-4] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:23:51.191 [http-nio-8080-exec-6] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:23:51.192 [http-nio-8080-exec-6] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:23:51.192 [http-nio-8080-exec-6] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:23:51.192 [http-nio-8080-exec-6] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:23:52.076 [http-nio-8080-exec-9] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:23:52.076 [http-nio-8080-exec-9] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:23:52.076 [http-nio-8080-exec-9] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:23:52.076 [http-nio-8080-exec-9] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:23:54.690 [http-nio-8080-exec-10] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:23:54.690 [http-nio-8080-exec-10] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:23:54.690 [http-nio-8080-exec-10] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:23:54.690 [http-nio-8080-exec-10] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:24:56.872 [http-nio-8080-exec-3] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:24:56.872 [http-nio-8080-exec-3] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:24:56.872 [http-nio-8080-exec-3] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:24:56.872 [http-nio-8080-exec-3] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:27:10.481 [restartedMain] INFO  com.submit.WorkuploadApplication - Starting WorkuploadApplication on LAPTOP-1T08KOV3 with PID 13636 (started by 10189 in F:\code\graduation design\work\workupload)
+2021-04-29 21:27:10.485 [restartedMain] INFO  com.submit.WorkuploadApplication - The following profiles are active: upload
+2021-04-29 21:27:10.635 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-29 21:27:10.635 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-29 21:27:11.961 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c484e735] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:27:12.063 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.submit.config.ShiroConfig$$EnhancerBySpringCGLIB$$50966bca] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:27:12.103 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:27:12.116 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$f7593865] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:27:12.137 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'druidConfig' of type [com.submit.config.DruidConfig$$EnhancerBySpringCGLIB$$a53ccf3b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:27:12.190 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:27:12.235 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:27:12.244 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:27:12.445 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:27:12.451 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:27:12.455 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'studentMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:27:12.460 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'studentMapper' of type [com.sun.proxy.$Proxy80] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:27:12.465 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'teacherMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:27:12.466 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'teacherMapper' of type [com.sun.proxy.$Proxy82] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:27:12.471 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'adminMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:27:12.472 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'adminMapper' of type [com.sun.proxy.$Proxy83] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:27:12.474 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userRealm' of type [com.submit.config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:27:13.133 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 21:27:13.538 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-04-29 21:27:13.550 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-29 21:27:13.559 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-29 21:27:13.559 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2021-04-29 21:27:13.724 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-04-29 21:27:13.725 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3090 ms
+2021-04-29 21:27:14.592 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-04-29 21:27:14.623 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-04-29 21:27:14.652 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-29 21:27:14.656 [restartedMain] INFO  com.submit.WorkuploadApplication - Started WorkuploadApplication in 4.946 seconds (JVM running for 6.251)
+2021-04-29 21:27:14.708 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-29 21:27:14.708 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-04-29 21:27:14.736 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 27 ms
+2021-04-29 21:27:14.936 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2021-04-29 21:27:23.245 [http-nio-8080-exec-5] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:27:23.246 [http-nio-8080-exec-5] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:27:23.246 [http-nio-8080-exec-5] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:27:23.246 [http-nio-8080-exec-5] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:27:49.426 [http-nio-8080-exec-8] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:27:49.426 [http-nio-8080-exec-8] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:27:49.427 [http-nio-8080-exec-8] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 21:27:49.427 [http-nio-8080-exec-8] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 22:32:09.176 [restartedMain] INFO  com.submit.WorkuploadApplication - Starting WorkuploadApplication on LAPTOP-1T08KOV3 with PID 21708 (started by 10189 in F:\code\graduation design\work\workupload)
+2021-04-29 22:32:09.178 [restartedMain] INFO  com.submit.WorkuploadApplication - The following profiles are active: upload
+2021-04-29 22:32:09.220 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-29 22:32:09.220 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-29 22:32:10.420 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b7efe07b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:32:10.519 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.submit.config.ShiroConfig$$EnhancerBySpringCGLIB$$44016510] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:32:10.556 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:32:10.568 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$eac431ab] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:32:10.581 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'druidConfig' of type [com.submit.config.DruidConfig$$EnhancerBySpringCGLIB$$98a7c881] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:32:10.637 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:32:10.682 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:32:10.690 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:32:10.886 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:32:10.893 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:32:10.896 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'studentMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:32:10.901 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'studentMapper' of type [com.sun.proxy.$Proxy80] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:32:10.905 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'teacherMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:32:10.906 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'teacherMapper' of type [com.sun.proxy.$Proxy82] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:32:10.911 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'adminMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:32:10.912 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'adminMapper' of type [com.sun.proxy.$Proxy83] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:32:10.914 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userRealm' of type [com.submit.config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:32:11.487 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:32:11.826 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-04-29 22:32:11.838 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-29 22:32:11.846 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-29 22:32:11.846 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2021-04-29 22:32:11.971 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-04-29 22:32:11.972 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2752 ms
+2021-04-29 22:32:12.719 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-04-29 22:32:12.748 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-04-29 22:32:12.773 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-29 22:32:12.776 [restartedMain] INFO  com.submit.WorkuploadApplication - Started WorkuploadApplication in 4.164 seconds (JVM running for 5.487)
+2021-04-29 22:36:24.188 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-29 22:36:24.188 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-04-29 22:36:24.204 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 16 ms
+2021-04-29 22:36:24.381 [http-nio-8080-exec-2] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2021-04-29 22:36:32.685 [http-nio-8080-exec-5] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 22:36:32.685 [http-nio-8080-exec-5] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 22:36:32.685 [http-nio-8080-exec-5] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 22:36:32.685 [http-nio-8080-exec-5] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 22:37:18.596 [restartedMain] INFO  com.submit.WorkuploadApplication - Starting WorkuploadApplication on LAPTOP-1T08KOV3 with PID 21768 (started by 10189 in F:\code\graduation design\work\workupload)
+2021-04-29 22:37:18.605 [restartedMain] INFO  com.submit.WorkuploadApplication - The following profiles are active: upload
+2021-04-29 22:37:18.696 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-29 22:37:18.696 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-29 22:37:20.681 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4dca57eb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:37:20.797 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.submit.config.ShiroConfig$$EnhancerBySpringCGLIB$$d9dbdc80] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:37:20.837 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:37:20.849 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$809ea91b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:37:20.862 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'druidConfig' of type [com.submit.config.DruidConfig$$EnhancerBySpringCGLIB$$2e823ff1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:37:20.915 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:37:20.961 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:37:20.968 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:37:21.173 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:37:21.180 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:37:21.184 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'studentMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:37:21.188 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'studentMapper' of type [com.sun.proxy.$Proxy80] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:37:21.193 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'teacherMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:37:21.194 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'teacherMapper' of type [com.sun.proxy.$Proxy82] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:37:21.198 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'adminMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:37:21.199 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'adminMapper' of type [com.sun.proxy.$Proxy83] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:37:21.201 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userRealm' of type [com.submit.config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:37:21.862 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-29 22:37:22.185 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-04-29 22:37:22.198 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-29 22:37:22.205 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-29 22:37:22.206 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2021-04-29 22:37:22.327 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-04-29 22:37:22.327 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3631 ms
+2021-04-29 22:37:23.265 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-04-29 22:37:23.298 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-04-29 22:37:23.329 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-29 22:37:23.332 [restartedMain] INFO  com.submit.WorkuploadApplication - Started WorkuploadApplication in 5.769 seconds (JVM running for 7.518)
+2021-04-29 22:37:29.143 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-29 22:37:29.143 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-04-29 22:37:29.159 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 16 ms
+2021-04-29 22:37:29.371 [http-nio-8080-exec-2] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2021-04-29 22:37:30.959 [http-nio-8080-exec-4] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 22:37:30.959 [http-nio-8080-exec-4] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 22:37:30.959 [http-nio-8080-exec-4] INFO  com.submit.service.teacherService - 2020  2
+2021-04-29 22:37:30.959 [http-nio-8080-exec-4] INFO  com.submit.service.teacherService - 2020  2

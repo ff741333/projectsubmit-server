@@ -1,0 +1,181 @@
+2021-04-29 21:18:37.243 [restartedMain] DEBUG com.submit.WorkuploadApplication - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2021-04-29 21:21:51.097 [http-nio-8080-exec-6] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - ==>  Preparing: select teacherno, name, password, level from teacher where teacherno = ? 
+2021-04-29 21:21:51.231 [http-nio-8080-exec-6] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - ==> Parameters: 123(String)
+2021-04-29 21:21:51.260 [http-nio-8080-exec-6] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - <==      Total: 1
+2021-04-29 21:21:51.323 [http-nio-8080-exec-7] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - ==>  Preparing: select teacherno, name, password, level from teacher where teacherno = ? 
+2021-04-29 21:21:51.324 [http-nio-8080-exec-7] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - ==> Parameters: 123(String)
+2021-04-29 21:21:51.325 [http-nio-8080-exec-7] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - <==      Total: 1
+2021-04-29 21:21:53.689 [http-nio-8080-exec-10] DEBUG com.submit.dao.teacherMapper.getAllTeacher - ==>  Preparing: select * from teacher 
+2021-04-29 21:21:53.689 [http-nio-8080-exec-10] DEBUG com.submit.dao.teacherMapper.getAllTeacher - ==> Parameters: 
+2021-04-29 21:21:53.692 [http-nio-8080-exec-10] DEBUG com.submit.dao.teacherMapper.getAllTeacher - <==      Total: 2
+2021-04-29 21:21:54.336 [http-nio-8080-exec-3] DEBUG com.submit.dao.studentMapper.getallstudent - ==>  Preparing: select * from student where studentno like CONCAT('%',?,'%') and name like CONCAT('%',?,'%') 
+2021-04-29 21:21:54.340 [http-nio-8080-exec-3] DEBUG com.submit.dao.studentMapper.getallstudent - ==> Parameters: (String), (String)
+2021-04-29 21:21:54.345 [http-nio-8080-exec-3] DEBUG com.submit.dao.studentMapper.getallstudent - <==      Total: 7
+2021-04-29 21:21:58.003 [http-nio-8080-exec-8] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==>  Preparing: select * from teachclass where teacherno=? ORDER BY coursesemester DESC 
+2021-04-29 21:21:58.007 [http-nio-8080-exec-8] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==> Parameters: 123(String)
+2021-04-29 21:21:58.014 [http-nio-8080-exec-8] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - <==      Total: 5
+2021-04-29 21:21:58.032 [http-nio-8080-exec-1] DEBUG c.submit.dao.studentclassMapper.getstudentbyclaid - ==>  Preparing: select a.id, a.no,s.name,s.pinyin,a.classid, a.studentno,a.note from studentclass a left join student s on a.studentno = s.studentno where a.classID=? order by a.no asc 
+2021-04-29 21:21:58.036 [http-nio-8080-exec-1] DEBUG c.submit.dao.studentclassMapper.getstudentbyclaid - ==> Parameters: 2(String)
+2021-04-29 21:21:58.042 [http-nio-8080-exec-1] DEBUG c.submit.dao.studentclassMapper.getstudentbyclaid - <==      Total: 6
+2021-04-29 21:22:04.866 [http-nio-8080-exec-2] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==>  Preparing: select * from teachclass where teacherno=? ORDER BY coursesemester DESC 
+2021-04-29 21:22:04.867 [http-nio-8080-exec-2] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==> Parameters: 123(String)
+2021-04-29 21:22:04.870 [http-nio-8080-exec-2] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - <==      Total: 5
+2021-04-29 21:22:05.875 [http-nio-8080-exec-4] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==>  Preparing: select * from teachclass where teacherno=? ORDER BY coursesemester DESC 
+2021-04-29 21:22:05.876 [http-nio-8080-exec-4] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==> Parameters: 123(String)
+2021-04-29 21:22:05.879 [http-nio-8080-exec-4] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - <==      Total: 5
+2021-04-29 21:22:05.907 [http-nio-8080-exec-5] DEBUG com.submit.dao.jobMapper.getjobbyteachclassid - ==>  Preparing: select * from job where teachclassid=? order by createTime desc 
+2021-04-29 21:22:05.909 [http-nio-8080-exec-5] DEBUG com.submit.dao.jobMapper.getjobbyteachclassid - ==> Parameters: 2(Integer)
+2021-04-29 21:22:05.924 [http-nio-8080-exec-5] DEBUG com.submit.dao.jobMapper.getjobbyteachclassid - <==      Total: 2
+2021-04-29 21:22:23.208 [http-nio-8080-exec-7] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==>  Preparing: select * from teachclass where teacherno=? ORDER BY coursesemester DESC 
+2021-04-29 21:22:23.208 [http-nio-8080-exec-7] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==> Parameters: 123(String)
+2021-04-29 21:22:23.214 [http-nio-8080-exec-7] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - <==      Total: 5
+2021-04-29 21:22:25.866 [http-nio-8080-exec-6] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==>  Preparing: select * from teachclass where teacherno=? ORDER BY coursesemester DESC 
+2021-04-29 21:22:25.866 [http-nio-8080-exec-6] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==> Parameters: 123(String)
+2021-04-29 21:22:25.869 [http-nio-8080-exec-6] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - <==      Total: 5
+2021-04-29 21:22:25.894 [http-nio-8080-exec-9] DEBUG com.submit.dao.jobMapper.getjobbyteachclassid - ==>  Preparing: select * from job where teachclassid=? order by createTime desc 
+2021-04-29 21:22:25.894 [http-nio-8080-exec-9] DEBUG com.submit.dao.jobMapper.getjobbyteachclassid - ==> Parameters: 2(Integer)
+2021-04-29 21:22:25.897 [http-nio-8080-exec-9] DEBUG com.submit.dao.jobMapper.getjobbyteachclassid - <==      Total: 2
+2021-04-29 21:22:26.346 [http-nio-8080-exec-8] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==>  Preparing: select * from teachclass where teacherno=? ORDER BY coursesemester DESC 
+2021-04-29 21:22:26.346 [http-nio-8080-exec-8] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==> Parameters: 123(String)
+2021-04-29 21:22:26.348 [http-nio-8080-exec-8] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - <==      Total: 5
+2021-04-29 21:23:42.013 [http-nio-8080-exec-4] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==>  Preparing: select * from teachclass where teacherno=? ORDER BY coursesemester DESC 
+2021-04-29 21:23:42.013 [http-nio-8080-exec-4] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==> Parameters: 123(String)
+2021-04-29 21:23:42.015 [http-nio-8080-exec-4] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - <==      Total: 5
+2021-04-29 21:23:42.029 [http-nio-8080-exec-5] DEBUG com.submit.dao.jobMapper.getjobbyteachclassid - ==>  Preparing: select * from job where teachclassid=? order by createTime desc 
+2021-04-29 21:23:42.029 [http-nio-8080-exec-5] DEBUG com.submit.dao.jobMapper.getjobbyteachclassid - ==> Parameters: 2(Integer)
+2021-04-29 21:23:42.031 [http-nio-8080-exec-5] DEBUG com.submit.dao.jobMapper.getjobbyteachclassid - <==      Total: 2
+2021-04-29 21:23:42.064 [http-nio-8080-exec-7] DEBUG com.submit.dao.scoreMapper.getscorebyjobid - ==>  Preparing: select e.name,d.* from(SELECT a.`no`,a.classID,a.studentno,b.ID scoreid,b.score,DATE_FORMAT(b.time,'%Y-%m-%d %h:%m:%s') as time,b.note from studentclass a LEFT JOIN score b on a.studentno=b.studentno and b.jobID=? where a.classID =(SELECT teachclassid FROM job WHERE ID=?) ORDER BY a.`no` asc)d,student e WHERE d.studentno=e.studentno order by d.no asc 
+2021-04-29 21:23:42.074 [http-nio-8080-exec-7] DEBUG com.submit.dao.scoreMapper.getscorebyjobid - ==> Parameters: 6(Integer), 6(Integer)
+2021-04-29 21:23:42.078 [http-nio-8080-exec-7] DEBUG com.submit.dao.scoreMapper.getscorebyjobid - <==      Total: 6
+2021-04-29 21:23:51.188 [http-nio-8080-exec-6] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==>  Preparing: select * from teachclass where teacherno=? ORDER BY coursesemester DESC 
+2021-04-29 21:23:51.188 [http-nio-8080-exec-6] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==> Parameters: 123(String)
+2021-04-29 21:23:51.191 [http-nio-8080-exec-6] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - <==      Total: 5
+2021-04-29 21:23:52.072 [http-nio-8080-exec-9] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==>  Preparing: select * from teachclass where teacherno=? ORDER BY coursesemester DESC 
+2021-04-29 21:23:52.073 [http-nio-8080-exec-9] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==> Parameters: 123(String)
+2021-04-29 21:23:52.075 [http-nio-8080-exec-9] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - <==      Total: 5
+2021-04-29 21:23:52.089 [http-nio-8080-exec-8] DEBUG com.submit.dao.jobMapper.getjobbyteachclassid - ==>  Preparing: select * from job where teachclassid=? order by createTime desc 
+2021-04-29 21:23:52.090 [http-nio-8080-exec-8] DEBUG com.submit.dao.jobMapper.getjobbyteachclassid - ==> Parameters: 2(Integer)
+2021-04-29 21:23:52.092 [http-nio-8080-exec-8] DEBUG com.submit.dao.jobMapper.getjobbyteachclassid - <==      Total: 2
+2021-04-29 21:23:52.103 [http-nio-8080-exec-1] DEBUG com.submit.dao.scoreMapper.getscorebyjobid - ==>  Preparing: select e.name,d.* from(SELECT a.`no`,a.classID,a.studentno,b.ID scoreid,b.score,DATE_FORMAT(b.time,'%Y-%m-%d %h:%m:%s') as time,b.note from studentclass a LEFT JOIN score b on a.studentno=b.studentno and b.jobID=? where a.classID =(SELECT teachclassid FROM job WHERE ID=?) ORDER BY a.`no` asc)d,student e WHERE d.studentno=e.studentno order by d.no asc 
+2021-04-29 21:23:52.104 [http-nio-8080-exec-1] DEBUG com.submit.dao.scoreMapper.getscorebyjobid - ==> Parameters: 6(Integer), 6(Integer)
+2021-04-29 21:23:52.108 [http-nio-8080-exec-1] DEBUG com.submit.dao.scoreMapper.getscorebyjobid - <==      Total: 6
+2021-04-29 21:23:54.687 [http-nio-8080-exec-10] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==>  Preparing: select * from teachclass where teacherno=? ORDER BY coursesemester DESC 
+2021-04-29 21:23:54.687 [http-nio-8080-exec-10] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==> Parameters: 123(String)
+2021-04-29 21:23:54.689 [http-nio-8080-exec-10] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - <==      Total: 5
+2021-04-29 21:24:56.869 [http-nio-8080-exec-3] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==>  Preparing: select * from teachclass where teacherno=? ORDER BY coursesemester DESC 
+2021-04-29 21:24:56.870 [http-nio-8080-exec-3] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==> Parameters: 123(String)
+2021-04-29 21:24:56.872 [http-nio-8080-exec-3] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - <==      Total: 5
+2021-04-29 21:24:56.880 [http-nio-8080-exec-4] DEBUG com.submit.dao.jobMapper.getjobbyteachclassid - ==>  Preparing: select * from job where teachclassid=? order by createTime desc 
+2021-04-29 21:24:56.880 [http-nio-8080-exec-4] DEBUG com.submit.dao.jobMapper.getjobbyteachclassid - ==> Parameters: 2(Integer)
+2021-04-29 21:24:56.881 [http-nio-8080-exec-4] DEBUG com.submit.dao.jobMapper.getjobbyteachclassid - <==      Total: 2
+2021-04-29 21:24:56.893 [http-nio-8080-exec-5] DEBUG com.submit.dao.scoreMapper.getscorebyjobid - ==>  Preparing: select e.name,d.* from(SELECT a.`no`,a.classID,a.studentno,b.ID scoreid,b.score,DATE_FORMAT(b.time,'%Y-%m-%d %h:%m:%s') as time,b.note from studentclass a LEFT JOIN score b on a.studentno=b.studentno and b.jobID=? where a.classID =(SELECT teachclassid FROM job WHERE ID=?) ORDER BY a.`no` asc)d,student e WHERE d.studentno=e.studentno order by d.no asc 
+2021-04-29 21:24:56.894 [http-nio-8080-exec-5] DEBUG com.submit.dao.scoreMapper.getscorebyjobid - ==> Parameters: 6(Integer), 6(Integer)
+2021-04-29 21:24:56.896 [http-nio-8080-exec-5] DEBUG com.submit.dao.scoreMapper.getscorebyjobid - <==      Total: 6
+2021-04-29 21:25:01.034 [http-nio-8080-exec-7] DEBUG com.submit.dao.teachclassMapper.selectByPrimaryKey - ==>  Preparing: select ID, teachclassno, coursename, coursesemester, credit, evalmethod, teacherno from teachclass where ID = ? 
+2021-04-29 21:25:01.034 [http-nio-8080-exec-7] DEBUG com.submit.dao.teachclassMapper.selectByPrimaryKey - ==> Parameters: 2(Integer)
+2021-04-29 21:25:01.036 [http-nio-8080-exec-7] DEBUG com.submit.dao.teachclassMapper.selectByPrimaryKey - <==      Total: 1
+2021-04-29 21:25:01.036 [http-nio-8080-exec-7] DEBUG com.submit.dao.jobMapper.selectByPrimaryKey - ==>  Preparing: select ID, teachclassid, no, title, duedate, type, note, createTime from job where ID = ? 
+2021-04-29 21:25:01.037 [http-nio-8080-exec-7] DEBUG com.submit.dao.jobMapper.selectByPrimaryKey - ==> Parameters: 6(Integer)
+2021-04-29 21:25:01.038 [http-nio-8080-exec-7] DEBUG com.submit.dao.jobMapper.selectByPrimaryKey - <==      Total: 1
+2021-04-29 21:27:10.484 [restartedMain] DEBUG com.submit.WorkuploadApplication - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2021-04-29 21:27:14.941 [http-nio-8080-exec-1] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - ==>  Preparing: select teacherno, name, password, level from teacher where teacherno = ? 
+2021-04-29 21:27:15.051 [http-nio-8080-exec-1] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - ==> Parameters: null
+2021-04-29 21:27:15.081 [http-nio-8080-exec-1] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - <==      Total: 0
+2021-04-29 21:27:19.260 [http-nio-8080-exec-2] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - ==>  Preparing: select teacherno, name, password, level from teacher where teacherno = ? 
+2021-04-29 21:27:19.261 [http-nio-8080-exec-2] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - ==> Parameters: 123(String)
+2021-04-29 21:27:19.265 [http-nio-8080-exec-2] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - <==      Total: 1
+2021-04-29 21:27:19.295 [http-nio-8080-exec-3] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - ==>  Preparing: select teacherno, name, password, level from teacher where teacherno = ? 
+2021-04-29 21:27:19.296 [http-nio-8080-exec-3] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - ==> Parameters: 123(String)
+2021-04-29 21:27:19.297 [http-nio-8080-exec-3] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - <==      Total: 1
+2021-04-29 21:27:21.471 [http-nio-8080-exec-4] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==>  Preparing: select * from teachclass where teacherno=? ORDER BY coursesemester DESC 
+2021-04-29 21:27:21.473 [http-nio-8080-exec-4] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==> Parameters: 123(String)
+2021-04-29 21:27:21.478 [http-nio-8080-exec-4] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - <==      Total: 5
+2021-04-29 21:27:23.240 [http-nio-8080-exec-5] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==>  Preparing: select * from teachclass where teacherno=? ORDER BY coursesemester DESC 
+2021-04-29 21:27:23.240 [http-nio-8080-exec-5] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==> Parameters: 123(String)
+2021-04-29 21:27:23.245 [http-nio-8080-exec-5] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - <==      Total: 5
+2021-04-29 21:27:23.271 [http-nio-8080-exec-6] DEBUG com.submit.dao.jobMapper.getjobbyteachclassid - ==>  Preparing: select * from job where teachclassid=? order by createTime desc 
+2021-04-29 21:27:23.273 [http-nio-8080-exec-6] DEBUG com.submit.dao.jobMapper.getjobbyteachclassid - ==> Parameters: 2(Integer)
+2021-04-29 21:27:23.276 [http-nio-8080-exec-6] DEBUG com.submit.dao.jobMapper.getjobbyteachclassid - <==      Total: 2
+2021-04-29 21:27:23.309 [http-nio-8080-exec-8] DEBUG com.submit.dao.scoreMapper.getscorebyjobid - ==>  Preparing: select e.name,d.* from(SELECT a.`no`,a.classID,a.studentno,b.ID scoreid,b.score,DATE_FORMAT(b.time,'%Y-%m-%d %h:%m:%s') as time,b.note from studentclass a LEFT JOIN score b on a.studentno=b.studentno and b.jobID=? where a.classID =(SELECT teachclassid FROM job WHERE ID=?) ORDER BY a.`no` asc)d,student e WHERE d.studentno=e.studentno order by d.no asc 
+2021-04-29 21:27:23.317 [http-nio-8080-exec-8] DEBUG com.submit.dao.scoreMapper.getscorebyjobid - ==> Parameters: 6(Integer), 6(Integer)
+2021-04-29 21:27:23.323 [http-nio-8080-exec-8] DEBUG com.submit.dao.scoreMapper.getscorebyjobid - <==      Total: 6
+2021-04-29 21:27:47.691 [http-nio-8080-exec-4] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - ==>  Preparing: select teacherno, name, password, level from teacher where teacherno = ? 
+2021-04-29 21:27:47.692 [http-nio-8080-exec-4] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - ==> Parameters: 123(String)
+2021-04-29 21:27:47.693 [http-nio-8080-exec-4] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - <==      Total: 1
+2021-04-29 21:27:47.700 [http-nio-8080-exec-5] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - ==>  Preparing: select teacherno, name, password, level from teacher where teacherno = ? 
+2021-04-29 21:27:47.700 [http-nio-8080-exec-5] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - ==> Parameters: 123(String)
+2021-04-29 21:27:47.701 [http-nio-8080-exec-5] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - <==      Total: 1
+2021-04-29 21:27:49.423 [http-nio-8080-exec-8] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==>  Preparing: select * from teachclass where teacherno=? ORDER BY coursesemester DESC 
+2021-04-29 21:27:49.423 [http-nio-8080-exec-8] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==> Parameters: 123(String)
+2021-04-29 21:27:49.426 [http-nio-8080-exec-8] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - <==      Total: 5
+2021-04-29 21:27:49.437 [http-nio-8080-exec-7] DEBUG com.submit.dao.jobMapper.getjobbyteachclassid - ==>  Preparing: select * from job where teachclassid=? order by createTime desc 
+2021-04-29 21:27:49.438 [http-nio-8080-exec-7] DEBUG com.submit.dao.jobMapper.getjobbyteachclassid - ==> Parameters: 2(Integer)
+2021-04-29 21:27:49.443 [http-nio-8080-exec-7] DEBUG com.submit.dao.jobMapper.getjobbyteachclassid - <==      Total: 2
+2021-04-29 21:27:49.495 [http-nio-8080-exec-7] DEBUG com.submit.dao.scoreMapper.getscorebyjobid - ==>  Preparing: select e.name,d.* from(SELECT a.`no`,a.classID,a.studentno,b.ID scoreid,b.score,DATE_FORMAT(b.time,'%Y-%m-%d %h:%m:%s') as time,b.note from studentclass a LEFT JOIN score b on a.studentno=b.studentno and b.jobID=? where a.classID =(SELECT teachclassid FROM job WHERE ID=?) ORDER BY a.`no` asc)d,student e WHERE d.studentno=e.studentno order by d.no asc 
+2021-04-29 21:27:49.495 [http-nio-8080-exec-7] DEBUG com.submit.dao.scoreMapper.getscorebyjobid - ==> Parameters: 6(Integer), 6(Integer)
+2021-04-29 21:27:49.498 [http-nio-8080-exec-7] DEBUG com.submit.dao.scoreMapper.getscorebyjobid - <==      Total: 6
+2021-04-29 22:00:36.552 [http-nio-8080-exec-6] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==>  Preparing: select * from teachclass where teacherno=? ORDER BY coursesemester DESC 
+2021-04-29 22:00:36.553 [http-nio-8080-exec-6] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==> Parameters: null
+2021-04-29 22:00:36.555 [http-nio-8080-exec-6] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - <==      Total: 0
+2021-04-29 22:00:37.150 [http-nio-8080-exec-7] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==>  Preparing: select * from teachclass where teacherno=? ORDER BY coursesemester DESC 
+2021-04-29 22:00:37.150 [http-nio-8080-exec-7] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==> Parameters: null
+2021-04-29 22:00:37.151 [http-nio-8080-exec-7] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - <==      Total: 0
+2021-04-29 22:00:38.096 [http-nio-8080-exec-4] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==>  Preparing: select * from teachclass where teacherno=? ORDER BY coursesemester DESC 
+2021-04-29 22:00:38.097 [http-nio-8080-exec-4] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==> Parameters: null
+2021-04-29 22:00:38.098 [http-nio-8080-exec-4] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - <==      Total: 0
+2021-04-29 22:25:39.673 [http-nio-8080-exec-6] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==>  Preparing: select * from teachclass where teacherno=? ORDER BY coursesemester DESC 
+2021-04-29 22:25:39.675 [http-nio-8080-exec-6] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==> Parameters: null
+2021-04-29 22:25:39.677 [http-nio-8080-exec-6] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - <==      Total: 0
+2021-04-29 22:25:40.179 [http-nio-8080-exec-9] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==>  Preparing: select * from teachclass where teacherno=? ORDER BY coursesemester DESC 
+2021-04-29 22:25:40.179 [http-nio-8080-exec-9] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==> Parameters: null
+2021-04-29 22:25:40.180 [http-nio-8080-exec-9] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - <==      Total: 0
+2021-04-29 22:25:40.562 [http-nio-8080-exec-1] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==>  Preparing: select * from teachclass where teacherno=? ORDER BY coursesemester DESC 
+2021-04-29 22:25:40.562 [http-nio-8080-exec-1] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==> Parameters: null
+2021-04-29 22:25:40.563 [http-nio-8080-exec-1] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - <==      Total: 0
+2021-04-29 22:30:06.541 [http-nio-8080-exec-5] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==>  Preparing: select * from teachclass where teacherno=? ORDER BY coursesemester DESC 
+2021-04-29 22:30:06.541 [http-nio-8080-exec-5] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==> Parameters: null
+2021-04-29 22:30:06.542 [http-nio-8080-exec-5] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - <==      Total: 0
+2021-04-29 22:30:19.931 [http-nio-8080-exec-6] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==>  Preparing: select * from teachclass where teacherno=? ORDER BY coursesemester DESC 
+2021-04-29 22:30:19.931 [http-nio-8080-exec-6] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==> Parameters: null
+2021-04-29 22:30:19.932 [http-nio-8080-exec-6] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - <==      Total: 0
+2021-04-29 22:32:09.178 [restartedMain] DEBUG com.submit.WorkuploadApplication - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2021-04-29 22:36:24.386 [http-nio-8080-exec-2] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - ==>  Preparing: select teacherno, name, password, level from teacher where teacherno = ? 
+2021-04-29 22:36:24.504 [http-nio-8080-exec-2] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - ==> Parameters: null
+2021-04-29 22:36:24.529 [http-nio-8080-exec-2] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - <==      Total: 0
+2021-04-29 22:36:31.166 [http-nio-8080-exec-1] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - ==>  Preparing: select teacherno, name, password, level from teacher where teacherno = ? 
+2021-04-29 22:36:31.167 [http-nio-8080-exec-1] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - ==> Parameters: 123(String)
+2021-04-29 22:36:31.175 [http-nio-8080-exec-1] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - <==      Total: 1
+2021-04-29 22:36:31.203 [http-nio-8080-exec-3] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - ==>  Preparing: select teacherno, name, password, level from teacher where teacherno = ? 
+2021-04-29 22:36:31.203 [http-nio-8080-exec-3] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - ==> Parameters: 123(String)
+2021-04-29 22:36:31.204 [http-nio-8080-exec-3] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - <==      Total: 1
+2021-04-29 22:36:32.677 [http-nio-8080-exec-5] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==>  Preparing: select * from teachclass where teacherno=? ORDER BY coursesemester DESC 
+2021-04-29 22:36:32.680 [http-nio-8080-exec-5] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==> Parameters: 123(String)
+2021-04-29 22:36:32.684 [http-nio-8080-exec-5] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - <==      Total: 5
+2021-04-29 22:36:32.710 [http-nio-8080-exec-6] DEBUG com.submit.dao.jobMapper.getjobbyteachclassid - ==>  Preparing: select * from job where teachclassid=? order by createTime desc 
+2021-04-29 22:36:32.713 [http-nio-8080-exec-6] DEBUG com.submit.dao.jobMapper.getjobbyteachclassid - ==> Parameters: 2(Integer)
+2021-04-29 22:36:32.719 [http-nio-8080-exec-6] DEBUG com.submit.dao.jobMapper.getjobbyteachclassid - <==      Total: 2
+2021-04-29 22:36:32.813 [http-nio-8080-exec-8] DEBUG com.submit.dao.scoreMapper.getscorebyjobid - ==>  Preparing: select e.name,d.* from(SELECT a.`no`,a.classID,a.studentno,b.ID scoreid,b.score,DATE_FORMAT(b.time,'%Y-%m-%d %h:%m:%s') as time,b.note from studentclass a LEFT JOIN score b on a.studentno=b.studentno and b.jobID=? where a.classID =(SELECT teachclassid FROM job WHERE ID=?) ORDER BY a.`no` asc)d,student e WHERE d.studentno=e.studentno order by d.no asc 
+2021-04-29 22:36:32.822 [http-nio-8080-exec-8] DEBUG com.submit.dao.scoreMapper.getscorebyjobid - ==> Parameters: 6(Integer), 6(Integer)
+2021-04-29 22:36:32.830 [http-nio-8080-exec-8] DEBUG com.submit.dao.scoreMapper.getscorebyjobid - <==      Total: 6
+2021-04-29 22:37:18.601 [restartedMain] DEBUG com.submit.WorkuploadApplication - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2021-04-29 22:37:29.377 [http-nio-8080-exec-2] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - ==>  Preparing: select teacherno, name, password, level from teacher where teacherno = ? 
+2021-04-29 22:37:29.528 [http-nio-8080-exec-2] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - ==> Parameters: 123(String)
+2021-04-29 22:37:29.560 [http-nio-8080-exec-2] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - <==      Total: 1
+2021-04-29 22:37:29.612 [http-nio-8080-exec-1] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - ==>  Preparing: select teacherno, name, password, level from teacher where teacherno = ? 
+2021-04-29 22:37:29.612 [http-nio-8080-exec-1] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - ==> Parameters: 123(String)
+2021-04-29 22:37:29.616 [http-nio-8080-exec-1] DEBUG com.submit.dao.teacherMapper.selectByPrimaryKey - <==      Total: 1
+2021-04-29 22:37:30.952 [http-nio-8080-exec-4] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==>  Preparing: select * from teachclass where teacherno=? ORDER BY coursesemester DESC 
+2021-04-29 22:37:30.955 [http-nio-8080-exec-4] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - ==> Parameters: 123(String)
+2021-04-29 22:37:30.959 [http-nio-8080-exec-4] DEBUG c.s.dao.teachclassMapper.getteacherclassbyteachid - <==      Total: 5
+2021-04-29 22:37:31.071 [http-nio-8080-exec-6] DEBUG com.submit.dao.jobMapper.getjobbyteachclassid - ==>  Preparing: select * from job where teachclassid=? order by createTime desc 
+2021-04-29 22:37:31.074 [http-nio-8080-exec-6] DEBUG com.submit.dao.jobMapper.getjobbyteachclassid - ==> Parameters: 2(Integer)
+2021-04-29 22:37:31.082 [http-nio-8080-exec-6] DEBUG com.submit.dao.jobMapper.getjobbyteachclassid - <==      Total: 2
+2021-04-29 22:37:31.128 [http-nio-8080-exec-7] DEBUG com.submit.dao.scoreMapper.getscorebyjobid - ==>  Preparing: select e.name,d.* from(SELECT a.`no`,a.classID,a.studentno,b.ID scoreid,b.score,DATE_FORMAT(b.time,'%Y-%m-%d %h:%m:%s') as time,b.note from studentclass a LEFT JOIN score b on a.studentno=b.studentno and b.jobID=? where a.classID =(SELECT teachclassid FROM job WHERE ID=?) ORDER BY a.`no` asc)d,student e WHERE d.studentno=e.studentno order by d.no asc 
+2021-04-29 22:37:31.139 [http-nio-8080-exec-7] DEBUG com.submit.dao.scoreMapper.getscorebyjobid - ==> Parameters: 6(Integer), 6(Integer)
+2021-04-29 22:37:31.144 [http-nio-8080-exec-7] DEBUG com.submit.dao.scoreMapper.getscorebyjobid - <==      Total: 6
+2021-04-29 22:37:37.369 [http-nio-8080-exec-8] DEBUG com.submit.dao.scoreMapper.getscorebyjobid - ==>  Preparing: select e.name,d.* from(SELECT a.`no`,a.classID,a.studentno,b.ID scoreid,b.score,DATE_FORMAT(b.time,'%Y-%m-%d %h:%m:%s') as time,b.note from studentclass a LEFT JOIN score b on a.studentno=b.studentno and b.jobID=? where a.classID =(SELECT teachclassid FROM job WHERE ID=?) ORDER BY a.`no` asc)d,student e WHERE d.studentno=e.studentno order by d.no asc 
+2021-04-29 22:37:37.370 [http-nio-8080-exec-8] DEBUG com.submit.dao.scoreMapper.getscorebyjobid - ==> Parameters: 5(Integer), 5(Integer)
+2021-04-29 22:37:37.374 [http-nio-8080-exec-8] DEBUG com.submit.dao.scoreMapper.getscorebyjobid - <==      Total: 6
+2021-04-29 22:37:39.415 [http-nio-8080-exec-10] DEBUG com.submit.dao.scoreMapper.getscorebyjobid - ==>  Preparing: select e.name,d.* from(SELECT a.`no`,a.classID,a.studentno,b.ID scoreid,b.score,DATE_FORMAT(b.time,'%Y-%m-%d %h:%m:%s') as time,b.note from studentclass a LEFT JOIN score b on a.studentno=b.studentno and b.jobID=? where a.classID =(SELECT teachclassid FROM job WHERE ID=?) ORDER BY a.`no` asc)d,student e WHERE d.studentno=e.studentno order by d.no asc 
+2021-04-29 22:37:39.415 [http-nio-8080-exec-10] DEBUG com.submit.dao.scoreMapper.getscorebyjobid - ==> Parameters: 6(Integer), 6(Integer)
+2021-04-29 22:37:39.418 [http-nio-8080-exec-10] DEBUG com.submit.dao.scoreMapper.getscorebyjobid - <==      Total: 6

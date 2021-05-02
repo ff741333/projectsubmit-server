@@ -1,8 +1,10 @@
 package com.submit.config;
 
 
+import com.submit.dao.adminMapper;
 import com.submit.dao.studentMapper;
 import com.submit.dao.teacherMapper;
+import com.submit.pojo.admin;
 import com.submit.pojo.student;
 import com.submit.pojo.teacher;
 import org.apache.shiro.SecurityUtils;
@@ -28,6 +30,8 @@ public class UserRealm extends AuthorizingRealm{
 	private studentMapper studentMapper;
 	@Autowired(required = false)
     private teacherMapper teacherMapper;
+	@Autowired(required = false)
+	private adminMapper adminMapper;
 
 	private final Logger logger= LoggerFactory.getLogger(UserRealm.class);
 	/**
@@ -50,6 +54,8 @@ public class UserRealm extends AuthorizingRealm{
 			info.addRole("teacher");
 		if(((String)subject.getSession().getAttribute("role")).equals("student"))
 			info.addRole("student");
+		if(((String)subject.getSession().getAttribute("role")).equals("admin"))
+			info.addRole("admin");
 		return info;
 	}
 	/**
@@ -73,15 +79,24 @@ public class UserRealm extends AuthorizingRealm{
 			SecurityUtils.getSubject().getSession().setAttribute("name",student.getName());
             return new SimpleAuthenticationInfo(student,student.getPassword(),"");
         }
-        else {
+        else if(role.equals("teacher")){
             teacher teacher=teacherMapper.selectByPrimaryKey(token.getUsername());
             if(teacher==null)
             {
                 return  null;
             }
+			SecurityUtils.getSubject().getSession().setAttribute("name",teacher.getName());
             return new SimpleAuthenticationInfo(teacher,teacher.getPassword(),"");
-
         }
+        else {
+			admin admin=adminMapper.selectbykey(token.getUsername());
+			if(admin==null)
+			{
+				return  null;
+			}
+			SecurityUtils.getSubject().getSession().setAttribute("name",admin.getIdadmin());
+			return new SimpleAuthenticationInfo(admin,admin.getPassword(),"");
+		}
 
 		
 

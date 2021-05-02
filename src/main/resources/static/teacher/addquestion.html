@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>个人信息</title>
+
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../layui/css/bootstrap.css">
+    <link rel="stylesheet" href="../layui/css/personal.css">
+
+</head>
+<body>
+
+<div class="layui-form-item">
+            <blockquote class="layui-elem-quote layui-text">
+                查看作业提交情况
+            </blockquote>
+    <!--<div class="layui-card-header" ><p align="center">作业提交（doc或docx文件）</p></div>-->
+    <form name="myupload" id="getstudent" class="layui-form" action="../download" method="post" enctype='multipart/form-data'
+          style="margin-left: auto;margin-right: auto;text-align: center">
+
+        <!--3学科名称-->
+
+    <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">科目类别：</label>
+                <div class="layui-input-block">
+                    <select name="lesson"  id="lesson" lay-filter="lessonname">
+                        <option  value="" ></option>
+                    </select>
+                </div>
+            </div>
+    </div>
+     <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">作业名称：</label>
+            <div class="layui-input-block">
+                <!--<select name="lessonname" id="lessonname">-->
+                    <!--<option value="11" >te1</option>-->
+
+                <!--</select>-->
+                <select name="job"  id="job" lay-filter="jobname">
+                    <option value="" ></option>
+                </select>
+            </div>
+        </div>
+    </div>
+<!--        <div class="layui-upload">-->
+<!--            <label id="lb"></label><br>&lt;!&ndash; 展示文字名称&ndash;&gt;-->
+<!--            <button class="layui-btn" lay-submit lay-filter="formDemo">下载实验报告</button>-->
+<!--            &lt;!&ndash;<button class="layui-btn" lay-submit lay-filter="formDemo2">下载补交报告</button>&ndash;&gt;-->
+<!--        </div>-->
+</form>
+
+    <div class="larry-personal-body clearfix">
+        <table class="layui-hide"  id="demo" lay-filter="demo"></table>
+    </div>
+
+</div>
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+        <button class="layui-btn layui-btn-sm" lay-event="getCheckData">右侧进行筛选导出</button>
+        <button class="layui-btn layui-btn-sm" onclick="addquestion()">添加问题</button>
+    </div>
+</script>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type="text/javascript" src="../layui/jquery-2.2.1.min.js"></script>
+<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+<script>
+//重新渲染
+    function renderForm(){
+        layui.use('form', function(){
+            var form = layui.form;//高版本建议把括号去掉，有的低版本，需要加()
+            form.render();
+        });
+    }
+
+    function filllesson(json) {
+         $("#lesson").empty();
+        for (var i=0;i<json.length;i++)
+        {
+            $("#lesson").append(" <option value=\""+json[i].id+"\">"+json[i].coursename+"</option>");
+            console.log(json[i].title)
+        }
+        renderForm();
+    }
+    function filltable() {
+        layui.use('table', function(){
+            var table = layui.table;//高版本建议把括号去掉，有的低版本，需要加()
+            var name=$("#lesson").find("option:selected").text()+$("#job").find("option:selected").text();
+            console.log(name);
+            table.render({
+                elem: '#demo'
+                ,url: 'getallquestions' //数据接口
+                ,where:{'jobid':$("#job").val()}
+                ,page: false //开启分页
+                ,toolbar: '#toolbarDemo'
+                ,title:name
+                ,cols: [[ //表头
+                    {field: 'idquestion', title: 'ID' ,sort: true,width:80, fixed: 'left'}
+                    ,{field: 'no', title: '序号',  sort: true, width:80}
+                    ,{field: 'content', title: '题目内容',event: 'setContent'}
+                    ,{field: 'type', title: '类型',edit:'text'}
+                    ,{field: 'answer', title: '答案',edit:'text'}
+                    ,{field: 'option', title: '选项个数（可选）',edit:'text'}
+                    ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:60}
+                ]]
+            });
+            //头工具栏事件
+            //监听单元格编辑
+            table.on('edit(demo)', function(obj){
+                var value = obj.value //得到修改后的值
+                    ,data = obj.data //得到所在行所有键值
+                    ,fieldva = obj.field; //得到字段
+
+                console.log('[ID: '+ data.scoreid +'] ' + fieldva + ' 字段更改为：'+ value);
+                $.ajax( {
+                    url:"setquestion",
+                    data:{
+                        'idquestion': data.idquestion,
+                        'no': data.no,
+                        'content': value,
+                        'type': data.type,
+                        'answer': data.answer,
+                        'option': data.option
+                    },
+                    method:'POST',
+                    success:function (msg) {
+                        layer.msg(msg)
+                    },
+                    error:function (msg) {
+                        layer.msg(msg)
+                    }
+
+                });
+            });
+
+
+            table.on('tool(demo)', function(obj){
+                var data = obj.data;
+                if(obj.event === 'setContent') {
+                    layer.prompt({
+                        formType: 2
+                        , title: '修改 ID 为 [' + data.idquestion + '] 的题目内容'
+                        , value: data.content
+                    }, function (value, index) {
+                        layer.close(index);
+
+                        $.ajax({
+                            url: "setquestion",
+                            type: "POST",
+                            data: {
+                                'idquestion': data.idquestion,
+                                'no': data.no,
+                                'content': value,
+                                'type': data.type,
+                                'answer': data.answer,
+                                'option': data.option
+                            },
+                            traditional: true,//这里设置为true
+                            success: function(msg) {
+                                layer.msg(msg);
+                            },
+                            error:function (msg) {
+                                layer.msg(msg)
+                            }
+                        });
+
+                        //同步更新表格和缓存对应的值
+                        obj.update({
+                            content: value
+                        });
+                    });
+                }
+                else if(obj.event === 'del'){
+                    layer.confirm('真的删除行么', function(index){
+                        $.ajax({
+                            url:'deletequestion',
+                            data: {
+                                'idquestion':data.idquestion,
+                            },
+                            method:'POST',
+                            traditional: true,
+                            success:function (msg) {
+                                layer.msg(msg);
+                                obj.del();
+                            },
+                            error:function (msg) {
+                                layer.msg(msg)
+                            }
+                        })
+                        layer.close(index);
+                    });
+                }
+            });
+        });
+    }
+
+    function addquestion() {
+        $.ajax( {
+            url:"addonequestion",
+            data:{'idjob': $("#job").val()},
+            method:'POST',
+            success:function (msg) {
+                layer.msg(msg);
+                filltable();
+            },
+            error:function (msg) {
+                layer.msg(msg)
+            }
+
+        });
+
+    }
+
+    function filljob(json) {
+        $("#job").empty();
+        for (var i=0;i<json.length;i++)
+        {
+            $("#job").append(" <option value=\""+json[i].id+"\">"+json[i].title+"</option>");
+            console.log(json[i].title)
+        }
+        renderForm();
+        filltable();
+    }
+    function getteachclass()
+    {
+       // $("#lessonname").empty();
+        var id=$("#lesson").val();
+        $.ajax({
+            url: "getteacherclassthisterm",
+            type: "GET",
+            traditional: true,//这里设置为true
+            success: function(data) {
+                //do sth...
+                filllesson(data);
+                getjob();
+            }
+        });
+    }
+    function getjob()
+    {
+        var id=$("#lesson").val();
+        $.ajax({
+            url: "getjobbyteachclaid",
+            type: "GET",
+            data:{
+                'teacherclaid':id
+            },
+            traditional: true,//这里设置为true
+            success: function(data) {
+                //do sth...
+                filljob(data);
+            }
+        });
+    }
+    getteachclass();
+
+
+    layui.use(['form', 'layedit', 'laydate','table'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            , table = layui.table
+            ,laydate = layui.laydate;
+
+        form.on('submit(formDemo2)', function(data){
+            console.log(data);
+            layer.msg(JSON.stringify("补交报告，请稍后"));
+            var url = "../downloadovertime";
+
+            var form = $("<form></form>").attr("action", url).attr("method", "post");
+            form.append($("<input></input>").attr("type", "hidden").attr("name", "lesson").attr("value", data.field.lesson));
+            form.append($("<input></input>").attr("type", "hidden").attr("name", "job").attr("value", data.field.job));
+            form.appendTo('body').submit().remove();
+            // $.ajax({
+            //     url: "../downloadovertime",
+            //     type: "post",
+            //     data: data.field,
+            //     // traditional: true,//这里设置为true
+            //     success: function(data) {
+            //         //do sth...
+            //        layer.msg(JSON.stringify(data));
+            //         console.log(data);
+            //         //alert(data);
+            //     }
+            // });
+            return false;
+        });
+
+        // form.on('submit(formDemo)', function(data){
+        //     layer.msg(JSON.stringify("下载中，请稍后"));
+        //     // $.ajax({
+        //     //     url: "",
+        //     //     type: "GET",
+        //     //     data: formdate,
+        //     //     traditional: true,//这里设置为true
+        //     //     success: function(data) {
+        //     //         //do sth...
+        //     //        layer.msg(JSON.stringify(data));
+        //     //         console.log(data);
+        //     //         //alert(data);
+        //     //     }
+        //     // });
+        //     return true;
+        // });
+
+        form.on('select(lessonname)', function(data){
+           getjob();
+        });
+        form.on('select(jobname)', function(data){
+            filltable();
+        });
+        //监听提交
+    });
+</script>
+</body>
+</html>

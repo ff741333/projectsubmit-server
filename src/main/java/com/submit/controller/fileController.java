@@ -44,7 +44,7 @@ public class fileController {
     com.submit.service.teacherService teacherService;
 
     @ResponseBody
-    @PostMapping("teacher/addstudent")
+    @PostMapping(value = "/teacher/addstudent", produces = {"text/plain;charset=utf-8"})
     public String teacheraddstudent(MultipartFile file, String name, String pinyin, String password, String studentno) throws IOException {
 
         logger.info(studentno + " " + name + " " + password + " " + pinyin);
@@ -106,7 +106,7 @@ public class fileController {
 
 
     @ResponseBody
-    @PostMapping("onfile")
+    @PostMapping(value = "/onfile", produces = {"text/plain;charset=utf-8"})
     public String onfile(MultipartFile file,int lessonid, int jobid, HttpServletRequest request) throws IOException, ParseException {
         //lessonid :teachclass jsp,安卓等信息的 id
         //jobid: jdbc,登录实验名称的 id
@@ -177,7 +177,7 @@ public class fileController {
     }
 
     //用于判断超时
-    @PostMapping("/downloadovertime")
+    @PostMapping(value = "/downloadovertime")
     public String downloadovertme(int lesson, int job,HttpServletRequest request, HttpServletResponse response) throws IOException {
         return downloadzip(true,lesson,job,request,response);
     }

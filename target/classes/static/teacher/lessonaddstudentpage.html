@@ -265,6 +265,8 @@
                     traditional: true,
                     data: data.field,
                     success: function (msg) {
+
+                        console.log(msg.data);
                         layer.msg(msg);
                         showstudent();
                     },

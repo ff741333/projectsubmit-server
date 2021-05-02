@@ -1,10 +1,7 @@
 package com.submit.dao;
 
 import com.submit.pojo.score;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 import java.util.Map;
@@ -41,7 +38,7 @@ public interface scoreMapper {
     score uniqueindex(@Param("jobID") Integer id,@Param("studentid") String studentid);
 
     @Select("select e.name,d.* from(SELECT a.`no`,a.classID,a.studentno,b.ID scoreid,b.score," +
-            "DATE_FORMAT(b.time,'%Y-%m-%d %h:%m:%s') as time,b.note " +
+            "DATE_FORMAT(b.time,'%Y-%m-%d %h:%m:%s') as time,b.note,b.status " +
             "from studentclass a " +
             "LEFT   JOIN  score b " +
             "on a.studentno=b.studentno " +
@@ -51,4 +48,13 @@ public interface scoreMapper {
             "WHERE d.studentno=e.studentno " +
             "order by d.no asc")
     List<Map> getscorebyjobid(int jobid);
+
+    @Insert("INSERT INTO score (jobID,studentno,time,status) VALUES (#{idjob},#{username},NOW(),1)")
+    boolean insertintojobstatus(String username, Integer idjob);
+
+    @Update("UPDATE score SET status = 2 WHERE ID = #{scoreid}")
+    int updatejobstatus(Integer scoreid);
+
+    @Update("UPDATE score SET status = 2 WHERE jobID = #{jobid} AND status = 1")
+    int updatealljobstatus(Integer jobid);
 }

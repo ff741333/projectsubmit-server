@@ -1,6 +1,8 @@
 package com.submit.controller;
 
 import com.submit.pojo.teachclass;
+import com.submit.service.teacherService;
+import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,15 +13,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-@RequestMapping("teacher")
+@RequestMapping(value = "/teacher")
 @Controller
 public class teacherLessonController {
 
     @Autowired(required = false)
-    com.submit.service.teacherService teacherService;
+    teacherService teacherService;
 
     @ResponseBody
-    @PostMapping("updatetechclass")
+    @PostMapping(value = "/updatetechclass", produces = {"text/plain;charset=utf-8"})
     public String updateteachclass(String teachclassno,String coursename,String coursesemester
             ,String credit,String id,String evalmethod)
     {
@@ -38,11 +40,14 @@ public class teacherLessonController {
     }
 
     @ResponseBody
-    @GetMapping("getteacherclassthisterm")
+    @GetMapping(value = "/getteacherclassthisterm")
     public List<teachclass> getteacherclassthisterm(HttpServletRequest request)
     {
         try {
             String teacherid = (String) request.getSession().getAttribute("teacherid");
+            if(teacherid == null || teacherid.isEmpty()){
+                teacherid = (String) SecurityUtils.getSubject().getSession().getAttribute("name");
+            }
             List<teachclass> list = teacherService.getteacherclassthisterm(teacherid);
             return list;
         }catch (Exception e)
@@ -53,12 +58,11 @@ public class teacherLessonController {
     }
 
     @ResponseBody
-    @GetMapping("getteacherclass")
+    @GetMapping(value = "/getteacherclass")
     public List<teachclass> getteacherclass(HttpServletRequest request)
     {
         try {
             String teacherid = (String) request.getSession().getAttribute("teacherid");
-            System.out.println(teacherid);
             List<teachclass> list = teacherService.getteachcassbyteacheridall(teacherid);
             return list;
         }catch (Exception e)
@@ -69,7 +73,7 @@ public class teacherLessonController {
     }
 
     @ResponseBody
-    @PostMapping("addtechclass")
+    @PostMapping(value = "/addtechclass", produces = {"text/plain;charset=utf-8"})
     public String addteachclass(String teachclassno,String coursename,String coursesemester
             ,String credit,String evalmethod,HttpServletRequest request)
     {
@@ -89,7 +93,7 @@ public class teacherLessonController {
     }
 
     @ResponseBody
-    @PostMapping("deleteteachclassbyid")
+    @PostMapping(value = "/deleteteachclassbyid", produces = {"text/plain;charset=utf-8"})
     public String deleteteachclassbyid(String id)
     {
         try {
