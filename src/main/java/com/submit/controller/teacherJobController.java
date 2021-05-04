@@ -67,11 +67,12 @@ public class teacherJobController {
 
     @ResponseBody
     @PostMapping(value = "/updatejobbyteachclaid",produces = {"text/plain;charset=utf-8"})
-    public String updatejobbyteachclaid(String ID,String no,String title,String duedate,String type,String note)
+    public String updatejobbyteachclaid(String ID,String no,String count,String title,String duedate,String type,String note)
     {
         try {
             job job=teacherService.getjobbyid(ID);
             if(no!=null&&!"".equals(no)){job.setNo(Integer.parseInt(no));}
+            if(count!=null&&!"".equals(count)){job.setCount(Integer.parseInt(count));}
             if(title!=null&&!"".equals(title)){job.setTitle(title);}
             if(duedate!=null&&!"".equals(duedate)){job.setDuedate(duedate);}
             if(type!=null&&!"".equals(type)){job.setType(Integer.parseInt(type));}

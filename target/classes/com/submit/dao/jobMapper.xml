@@ -6,6 +6,7 @@
     <result column="teachclassid" property="teachclassid" jdbcType="INTEGER" />
     <result column="no" property="no" jdbcType="INTEGER" />
     <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="count" property="count" jdbcType="INTEGER" />
     <result column="duedate" property="duedate" jdbcType="CHAR" />
     <result column="type" property="type" jdbcType="INTEGER" />
     <result column="note" property="note" jdbcType="VARCHAR" />
@@ -98,6 +99,9 @@
       </if>
       <if test="title != null" >
         title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="count != null" >
+        count = #{count,jdbcType=INTEGER},
       </if>
       <if test="duedate != null" >
         duedate = #{duedate,jdbcType=CHAR},

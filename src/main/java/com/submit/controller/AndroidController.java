@@ -8,6 +8,7 @@ import com.submit.exception.ApiException;
 import com.submit.model.User;
 import com.submit.pojo.job;
 import com.submit.pojo.question;
+import com.submit.pojo.student;
 import com.submit.pojo.teachclass;
 import com.submit.service.questionService;
 import com.submit.service.studentService;
@@ -21,6 +22,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -41,6 +43,7 @@ public class AndroidController {
     studentService studentService;
     @Autowired(required = false)
     questionService questionService;
+
 
 
     //Android登录
@@ -78,6 +81,28 @@ public class AndroidController {
             e.printStackTrace();
             throw new ApiException("用户名或密码错误！", COMMON_BUSINESS_ERROR);
         }
+    }
+
+    @LoginRequired
+    @ResponseBody
+    @PostMapping(value = "/updatepasswordforandroid")
+    public ApiResult updatepassword(@CurrentUser User user, String oldpassword, String newpassword) throws Exception
+    {
+            student student=studentService.selectByPrimaryKey(user.getLoginName());
+            logger.info(student.getName()+" "+student.getStudentno()+" "+student.getPassword());
+            if(student==null){
+                throw new ApiException("无该用户！", COMMON_BUSINESS_ERROR);
+            }
+            else if(!student.getPassword().equals(oldpassword))
+            {
+                throw new ApiException("原密码错误", COMMON_BUSINESS_ERROR);
+            }
+            else
+            {
+                studentService.updatepassword(user.getLoginName(),newpassword);
+                return new ApiResult<String>().setData("密码修改成功哦");
+            }
+
     }
 
     //获取课程信息

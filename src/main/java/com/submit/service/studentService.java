@@ -85,6 +85,14 @@ public class studentService {
     public boolean insertintojobstatus(String username, Integer idjob){
         return scoreMapper.insertintojobstatus(username,idjob);
     }
+
+    public student selectByPrimaryKey(String username) {
+        return studentMapper.selectByPrimaryKey(username);
+    }
+
+    public boolean updatepassword(String username, String newpassword) {
+        return studentMapper.updatepassword(username, newpassword);
+    }
 }
 
 
