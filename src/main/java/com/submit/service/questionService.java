@@ -36,11 +36,11 @@ public class questionService {
         return questionMapper.insertorupdateanswer(username,idquestion,youranswer);
     }
 
-    public int updatequestion(Integer idquestion, String content, Integer type, Integer no, String answer, Integer option){
+    public int updatequestion(Integer idquestion, String content, Integer type, Integer no, String answer, Integer option,Integer value){
         if(type == 1) //填空题
-            return questionMapper.updatequestion1(idquestion,content,type,no,answer);
+            return questionMapper.updatequestion1(idquestion,content,type,no,answer,value);
         else if(type == 2) //选择题
-            return questionMapper.updatequestion2(idquestion,content,type,no,answer,option);
+            return questionMapper.updatequestion2(idquestion,content,type,no,answer,option,value);
         else
             return -1;
     }

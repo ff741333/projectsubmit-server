@@ -49,12 +49,14 @@ public interface scoreMapper {
             "order by d.no asc")
     List<Map> getscorebyjobid(int jobid);
 
+    //只是根据jobid查询
+    @Select("SELECT * FROM score WHERE jobID = #{jobid} AND status = 1")
+    List<score> getscorebyjobid2(int jobid);
+
     @Insert("INSERT INTO score (jobID,studentno,time,status) VALUES (#{idjob},#{username},NOW(),1)")
     boolean insertintojobstatus(String username, Integer idjob);
 
-    @Update("UPDATE score SET status = 2 WHERE ID = #{scoreid}")
-    int updatejobstatus(Integer scoreid);
+    @Update("UPDATE score SET status = 2 , score.score = #{score} WHERE ID = #{scoreid}")
+    int updatejobstatus(Integer scoreid, Integer score);
 
-    @Update("UPDATE score SET status = 2 WHERE jobID = #{jobid} AND status = 1")
-    int updatealljobstatus(Integer jobid);
 }

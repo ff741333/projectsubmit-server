@@ -25,6 +25,8 @@ public class teacherService {
     private jobMapper jobMapper;
     @Autowired(required = false)
     scoreMapper scoreMapper;
+    @Autowired(required = false)
+    questionMapper questionMapper;
     public teacher getteacherbyid(String teacherid) {
         return teacherMapper.selectByPrimaryKey(teacherid);
     }
@@ -228,10 +230,42 @@ public class teacherService {
     }
 
     public int updatejobstatus(Integer scoreid){
-        return scoreMapper.updatejobstatus(scoreid);
+        try {
+            score score = scoreMapper.selectByPrimaryKey(Integer.toUnsignedLong(scoreid));
+            List<question> questionsList = questionMapper.selectbyjobid(score.getJobid());
+            Map<String, Object> onesAnswer;
+            int sum = 0;
+            for(question x: questionsList){
+                onesAnswer= questionMapper.selectonesqustion(score.getStudentno(),x.getIdquestion());
+                if(x.getAnswer().trim().equals(((String) onesAnswer.get("youranswer")).trim()))
+                    sum+=x.getValue();
+            }
+
+            return scoreMapper.updatejobstatus(scoreid, sum);
+        }catch (Exception e){
+            return 0;
+        }
     }
 
     public int updatealljobstatus(Integer jobid){
-        return scoreMapper.updatealljobstatus(jobid);
+        try {
+            int success = 0;
+            List<score> list = scoreMapper.getscorebyjobid2(jobid);
+            for(score y:list){
+                System.out.println(121212);
+                List<question> questionsList = questionMapper.selectbyjobid(y.getJobid());
+                Map<String, Object> onesAnswer;
+                int sum = 0;
+                for(question x: questionsList){
+                    onesAnswer= questionMapper.selectonesqustion(y.getStudentno(),x.getIdquestion());
+                    if(x.getAnswer().trim().equals(((String) onesAnswer.get("youranswer")).trim()))
+                        sum+=x.getValue();
+                }
+                success+=scoreMapper.updatejobstatus(y.getId().intValue(), sum);
+            }
+            return success;
+        }catch (Exception e){
+            return 0;
+        }
     }
 }

@@ -56,6 +56,11 @@ public class question {
      */
     private Integer option;
 
+    /**
+     * 分值
+     */
+    private Integer value;
+
     public Integer getIdquestion() {
         return idquestion;
     }
@@ -110,5 +115,13 @@ public class question {
 
     public void setOption(Integer option) {
         this.option = option;
+    }
+
+    public Integer getValue() {
+        return value;
+    }
+
+    public void setValue(Integer value) {
+        this.value = value;
     }
 }

@@ -53,7 +53,8 @@ public class teacherQuestionController {
                     , question.getType()
                     , question.getNo()
                     , question.getAnswer()
-                    , question.getOption()) > 0)
+                    , question.getOption()
+                    , question.getValue()) > 0)
                 return "修改成功";
             else return "无修改";
         } catch (Exception e) {

@@ -209,10 +209,9 @@
                                     method:'POST',
                                     traditional: true,
                                     success:function (msg) {
+                                        filltable();
+                                        layer.closeAll();
                                         layer.msg(msg);
-                                        obj.update({
-                                            status:2
-                                        });
                                     },
                                     error:function (msg) {
                                         layer.msg(msg)

@@ -40,9 +40,9 @@ public interface jobMapper {
     List<Map<String, Object>> gettaskdetail(String studentid);
 
     @Select("SELECT job.ID as id,teachclassid,no,title,duedate,type,job.note," +
-            "DATE_FORMAT(createTime,'%Y-%m-%d %h:%m:%s') as createtime,count,jobID,studentno,score,DATE_FORMAT(time,'%Y-%m-%d %h:%m:%s'),status " +
-            "FROM job LEFT JOIN score ON job.ID = score.jobID and score.studentno = #{studentno} " +
-            "WHERE teachclassid = #{teachclassid} ORDER BY no DESC")
+            "DATE_FORMAT(createTime,'%Y-%m-%d %h:%m:%s') as createtime,count,jobID,studentno,score,DATE_FORMAT(time,'%Y-%m-%d %h:%m:%s'),status,sum,score.score " +
+            "FROM (SELECT SUM(value) as sum, idjob FROM question GROUP BY idjob) as a, job LEFT JOIN score ON job.ID = score.jobID and score.studentno = #{studentno} " +
+            "WHERE a.idjob = job.ID AND teachclassid = #{teachclassid} ORDER BY no DESC")
     List<Map<String, Object>> getstudentjob(String studentno, Integer teachclassid);
 
 

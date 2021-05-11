@@ -23,11 +23,11 @@ public interface questionMapper {
     @Insert("INSERT INTO answer VALUES (#{idquestion},#{username},#{youranswer}) ON DUPLICATE KEY UPDATE youranswer = #{youranswer}")
     boolean insertorupdateanswer (String username,Integer idquestion, String youranswer);
 
-    @Update("UPDATE question SET no = #{no},content = #{content}, type = #{type}, answer = #{answer}, question.option = #{option} WHERE idquestion = #{idquestion}")
-    int updatequestion2(Integer idquestion, String content, Integer type, Integer no, String answer, Integer option);
+    @Update("UPDATE question SET no = #{no},content = #{content}, type = #{type}, answer = #{answer}, question.option = #{option}, question.value = #{value} WHERE idquestion = #{idquestion}")
+    int updatequestion2(Integer idquestion, String content, Integer type, Integer no, String answer, Integer option, Integer value);
 
-    @Update("UPDATE question SET no = #{no},content = #{content}, type = #{type}, answer = #{answer} WHERE idquestion = #{idquestion}")
-    int updatequestion1(Integer idquestion, String content, Integer type, Integer no, String answer);
+    @Update("UPDATE question SET no = #{no},content = #{content}, type = #{type}, answer = #{answer}, question.value = #{value} WHERE idquestion = #{idquestion}")
+    int updatequestion1(Integer idquestion, String content, Integer type, Integer no, String answer, Integer value);
 
     @Insert("INSERT INTO question (idjob, no) VALUES (#{idjob}, #{no})")
     boolean insertquestion(Integer idjob, Integer no);
